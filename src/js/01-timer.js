@@ -35,7 +35,6 @@ const options = {
       userSelectedDate = selectedDates[0];
       activeBtn();
       iziToast.show({
-        // iconUrl: './img/bi_check2-circle.svg',
         icon: 'icon-true',
         backgroundColor: '#82C43C',
         message: 'You can start the countdown',
@@ -46,7 +45,6 @@ const options = {
       });
     } else if (selectedDates[0] < new Date()) {
       iziToast.show({
-        // iconUrl: './img/bi_x-octagon.svg',
         icon: 'icon-false',
         backgroundColor: '#FC5A5A',
         message: 'Please choose a date in the future',
