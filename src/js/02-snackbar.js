@@ -27,12 +27,14 @@ const successfulMessage = () =>
 form.addEventListener('submit', e => {
   e.preventDefault();
 
+  const state = form.elements.state.value;
+
   const promise = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (form.elements.state.value === 'fulfilled') {
+        if (state === 'fulfilled') {
           resolve();
-        } else if (form.elements.state.value === 'rejected') {
+        } else if (state === 'rejected') {
           reject();
         }
       }, form.elements.delay.value);
