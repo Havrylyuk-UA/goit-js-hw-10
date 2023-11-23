@@ -73,7 +73,7 @@ startBtn.addEventListener('click', e => {
     } else {
       clearInterval(startCountdown);
       iziToast.show({
-        iconUrl: '../img/svg/bi_check2-circle.svg',
+        iconUrl: '../images/svg/bi_check2-circle.svg',
         backgroundColor: '#FC5A5A',
         message: 'The timer has stopped',
         messageColor: '#FAFAFB',
