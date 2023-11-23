@@ -33,7 +33,7 @@ const options = {
       userSelectedDate = selectedDates[0];
       activeBtn();
       iziToast.show({
-        iconUrl: '../img/svg/bi_check2-circle.svg',
+        iconUrl: '/src/img/svg/bi_check2-circle.svg',
         backgroundColor: '#82C43C',
         message: 'You can start the countdown',
         messageColor: '#FAFAFB',
@@ -43,7 +43,7 @@ const options = {
       });
     } else {
       iziToast.show({
-        iconUrl: '../img/svg/bi_x-octagon.svg',
+        iconUrl: '/src/img/svg/bi_x-octagon.svg',
         backgroundColor: '#FC5A5A',
         message: 'Please choose a date in the future',
         messageColor: '#FAFAFB',
