@@ -2,22 +2,22 @@ import iziToast from 'izitoast';
 
 const form = document.querySelector('.form');
 
-const errorMessage = () =>
+const errorMessage = (delay) =>
   iziToast.show({
     icon: 'icon-false',
     backgroundColor: '#FC5A5A',
-    message: `Rejected promise in ${form.elements.delay.value} ms`,
+    message: `Rejected promise in ${delay} ms`,
     messageColor: '#FAFAFB',
     messageSize: '16px',
     position: 'topCenter',
     close: false,
   });
 
-const successfulMessage = () =>
+const successfulMessage = (delay) =>
   iziToast.show({
     icon: 'icon-true',
     backgroundColor: '#82C43C',
-    message: `Fulfilled promise in ${form.elements.delay.value} ms`,
+    message: `Fulfilled promise in ${delay} ms`,
     messageColor: '#FAFAFB',
     messageSize: '16px',
     position: 'topCenter',
@@ -27,6 +27,7 @@ const successfulMessage = () =>
 form.addEventListener('submit', e => {
   e.preventDefault();
 
+  const time = form.elements.delay.value;
   const state = form.elements.state.value;
 
   const promise = () => {
@@ -37,11 +38,11 @@ form.addEventListener('submit', e => {
         } else if (state === 'rejected') {
           reject();
         }
-      }, form.elements.delay.value);
+      }, time);
     });
   };
 
   promise()
-    .then(value => successfulMessage())
-    .catch(error => errorMessage());
+    .then(value => successfulMessage(time))
+    .catch(error => errorMessage(time));
 });
