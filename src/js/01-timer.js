@@ -12,6 +12,8 @@ let userSelectedDate;
 
 const disabledBtn = () => {
   startBtn.disabled = true;
+  startBtn.style.background = '#cfcfcf';
+  startBtn.style.color = '#989898';
 };
 
 disabledBtn();
@@ -33,7 +35,8 @@ const options = {
       userSelectedDate = selectedDates[0];
       activeBtn();
       iziToast.show({
-        iconUrl: './img/bi_check2-circle.svg',
+        // iconUrl: './img/bi_check2-circle.svg',
+        icon: 'icon-true',
         backgroundColor: '#82C43C',
         message: 'You can start the countdown',
         messageColor: '#FAFAFB',
@@ -41,9 +44,10 @@ const options = {
         position: 'topCenter',
         close: false,
       });
-    } else {
+    } else if (selectedDates[0] < new Date()) {
       iziToast.show({
-        iconUrl: './img/bi_x-octagon.svg',
+        // iconUrl: './img/bi_x-octagon.svg',
+        icon: 'icon-false',
         backgroundColor: '#FC5A5A',
         message: 'Please choose a date in the future',
         messageColor: '#FAFAFB',
