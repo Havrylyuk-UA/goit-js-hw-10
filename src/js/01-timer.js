@@ -43,7 +43,7 @@ const options = {
       });
     } else {
       iziToast.show({
-        iconUrl: 'src/images/svg/bi_x-octagon.svg',
+        iconUrl: 'src/img/svg/bi_x-octagon.svg',
         backgroundColor: '#FC5A5A',
         message: 'Please choose a date in the future',
         messageColor: '#FAFAFB',
